@@ -4,14 +4,14 @@ const tareas = document.querySelector(".tareas");
 
 const textoTarea = localStorage.getItem("texto");
 if(textoTarea != ""){
-    pendientes.textContent=`Guardado: ${textGuardo}`;
+    pendientes.textContent=`Guardado: ${textoTarea}`;
 
 }
 btnTareas.addEventListener("click", ()=>{
-    const tareas =pendientes.value;
+    const texto =tareas.value;
     if(tareas != ""){
-        localStorage.setItem(`tareas`, tareas);
-        tareas.textContent =`Guardado: ${texto}`;
+        localStorage.setItem(`tareas`, texto);
+        pendientes.textContent =`Guardado: ${texto}`;
     }
 
 });
