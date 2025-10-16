@@ -1,0 +1,1 @@
+Aplicación sencilla de Lista de Tareas hecha con HTML, CSS y JavaScript. Permite agregar tareas y guardarlas automáticamente usando LocalStorage. También incluye la función de marcar tareas como completadas con solo hacer clic sobre ellas. No utiliza JSON.
