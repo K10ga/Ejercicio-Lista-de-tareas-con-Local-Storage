@@ -2,16 +2,22 @@ const btnTareas = document.querySelector(".btnTareas");
 const pendientes = document.querySelector(".pendientes");
 const tareas = document.querySelector(".tareas");
 
-const textoTarea = localStorage.getItem("texto");
+const textoTarea = localStorage.getItem("tareas");
 if(textoTarea != ""){
-    pendientes.textContent=`Guardado: ${textoTarea}`;
+    pendientes.innerHTML = textoTarea;
 
 }
 btnTareas.addEventListener("click", ()=>{
     const texto =tareas.value;
-    if(tareas != ""){
-        localStorage.setItem(`tareas`, texto);
-        pendientes.textContent =`Guardado: ${texto}`;
+    if(texto != ""){
+        const li = document.createElement("li");
+        li.textContent = texto;
+
+        pendientes.appendChild(li);
+
+        localStorage.setItem(`tareas`, pendientes.innerHTML);
+
+        tareas.value = "";
     }
 
 });
