@@ -9,9 +9,14 @@ if(textoTarea != ""){
 }
 btnTareas.addEventListener("click", ()=>{
     const texto =tareas.value;
-    if(texto != ""){
+    if(texto !== ""){
         const li = document.createElement("li");
         li.textContent = texto;
+
+        li.addEventListener("click", () => {
+        li.classList.toggle("completado");
+    });
+
 
         pendientes.appendChild(li);
 
@@ -21,3 +26,4 @@ btnTareas.addEventListener("click", ()=>{
     }
 
 });
+
